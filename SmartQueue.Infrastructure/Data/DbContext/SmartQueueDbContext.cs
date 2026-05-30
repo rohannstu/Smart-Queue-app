@@ -18,6 +18,8 @@ public sealed class SmartQueueDbContext : DbContext
     }
 
     public DbSet<Organization> Organizations { get; set; } = null!;
+    public DbSet<User> Users { get; set; } = null!;
+    public DbSet<RefreshToken> RefreshTokens { get; set; } = null!;
 
     public Guid CurrentOrganizationId => _tenantProvider.GetOrganizationId();
     public bool CurrentUserIsSuperAdmin => _tenantProvider.IsSuperAdmin();
