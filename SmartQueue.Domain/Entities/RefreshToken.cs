@@ -1,0 +1,14 @@
+namespace SmartQueue.Domain.Entities;
+
+public sealed class RefreshToken : BaseEntity, ITenantEntity
+{
+    public Guid OrganizationId { get; set; }
+    public Guid UserId { get; set; }
+    public string Token { get; set; } = null!;
+    public DateTime ExpiresAt { get; set; }
+    public bool IsRevoked { get; set; }
+    public DateTime? RevokedAt { get; set; }
+    public string? ReplacedByToken { get; set; }
+
+    public User? User { get; set; }
+}
